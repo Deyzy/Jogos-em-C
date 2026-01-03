@@ -43,6 +43,8 @@ int main(){
 }
 
 ------------------------------------------------------------------------------
+//FUNCAO ABS
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -58,6 +60,7 @@ int main(){
 }
 
 ------------------------------------------------------------------------------
+//GERAR NUMERO RANDOMICO
 
 #include <stdio.h>
 #include <stidlib.h>
@@ -73,3 +76,21 @@ int main(){
   printf("%d\n", n2);
 
 }
+------------------------------------------------------------------------------
+//TIME COM NUMERO RANDOMINCO
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(){
+
+  int segundos = time (0);
+  srand(segundos);
+
+  int numerogrande = rand();
+  printf("%d", n1);
+  
+}
+
+------------------------------------------------------------------------------

@@ -12,18 +12,18 @@ int main() {
   printf ("*************************************\n");
 
   int chute;
-  double pontos = 1000;
-
   int nivel;
   int totaldetentativas;
-   
-  int acertou = 0;
+  int acertou;
+  
+  //quantidade de pontos inicial
+  double pontos = 1000;
  
+  // numero secreto aleatorio
   srand(time(0));
   int numerosecreto = rand() % 100;
  
- 
- 
+  //nivel de dificuldade
   printf("Qual o nível de dificuldade?\n");
   printf("(1) Fácil (2) médio (3) Dificil\n\n");
   printf("Escolha: ");
@@ -42,6 +42,7 @@ int main() {
         break;
   }
   
+  //loop principal do jogo
   for(int i = 1; i <= totaldetentativas; i++){
   
     printf("-> Tentativa %d de %d\n\n", i, totaldetentativas);
@@ -53,25 +54,23 @@ int main() {
         printf("Você não pode chutar numeros negativos\n");
         continue;
     }
-    
-    //printf("Seu %dº chute foi %d\n", i, chute);
 
-    int acertou = chute == numerosecreto;
-    int maior = chute > numerosecreto;
+    acertou = chute == numerosecreto;
     
     if(acertou){
         break;
-    }else if (maior){
+    }else if (chute > numerosecreto){
         printf("Seu chute foi maior do que o numero secreto!\n\n");
     }else {
         printf("Seu chute foi menor que o numero secreto\n\n");
     }
     
+    //calcula a quantidade de pontos
     double pontosperdidos = abs(chute - numerosecreto) / 2.0;
     pontos = pontos - pontosperdidos;
     
   }
-     // imprimindo mensagem de vitoria ou derrota
+    // imprimindo mensagem de vitoria ou derrota
     printf("\n");
     if(acertou) {
         printf("             OOOOOOOOOOO               \n");
